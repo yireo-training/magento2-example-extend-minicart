@@ -1,0 +1,20 @@
+<?php
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+
+/** @var $block Template */
+?>
+<script>
+    require([
+        'jquery'
+    ], function ($) {
+        $.ajax({
+            url: <?php echo $block->getUrl('customer/section/load/?sections=cart'); ?>,
+            success: function (result) {
+                console.log(result);
+            },
+            async: false
+        });
+    });
+</script>
